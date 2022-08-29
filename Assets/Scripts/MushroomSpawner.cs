@@ -13,7 +13,7 @@ public class MushroomSpawner : MonoBehaviour
         poolObject = new List<GameObject>();
         for (int i = 0; i < amauntPool; i++)
         {
-            GameObject obj = (GameObject)Instantiate(objPrefab);
+            GameObject obj = Instantiate(objPrefab);
             obj.SetActive(false);
             poolObject.Add(obj);
         }

@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        int indexAudio = Random.Range(0, 4);
+        int indexAudio = Random.Range(1, 4);
         _bgmAudioSource.clip = Resources.Load<AudioClip>($"Audio/BGM/BGM_0{indexAudio}");
     }
 
