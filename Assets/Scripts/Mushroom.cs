@@ -5,7 +5,9 @@ using UnityEngine;
 public class Mushroom : MonoBehaviour
 {
     public float upForce = 1f;
-    public float sideForce = .1f;
+    public float sideForce = 0.1f;
+    public float timeLive = 3f;
+    public float intervaltime = 0f;
     void Start()
     {
         float xForce = Random.Range(-sideForce, sideForce);
@@ -15,5 +17,17 @@ public class Mushroom : MonoBehaviour
         Vector3 force = new Vector3 (xForce, yForce, zForce);
 
         GetComponent<Rigidbody>().velocity = force;
+
+    }
+
+    private void FixedUpdate()
+    {
+        intervaltime += Time.deltaTime;
+        if (intervaltime > timeLive)
+        {
+            gameObject.SetActive(false);
+            intervaltime = intervaltime - timeLive;
+        }
+
     }
 }

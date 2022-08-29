@@ -17,15 +17,13 @@ public class MenuLauncher : MonoBehaviour
         _playNoAudioButton.onClick.AddListener(OnWithoutAudioButtonClicked);
     }
     private void OnWithAudioButtonClicked()
-        {
-            
-            AudioManager.Instance.isAudioEnabled = true;
-            SceneManager.LoadScene("Game");
-        }
-        private void OnWithoutAudioButtonClicked()
-        {
-            
-            AudioManager.Instance.isAudioEnabled = false;
-            SceneManager.LoadScene("Game");
-        }
+    {        
+        AudioManager.Instance.isAudioEnabled = true;
+        SceneManager.LoadScene("Game");
+    }
+    private void OnWithoutAudioButtonClicked()
+    {
+        AudioManager.Instance.isAudioEnabled = false;
+        SceneManager.LoadScene("Game");
+    }
 }
